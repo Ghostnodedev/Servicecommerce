@@ -1,133 +1,231 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
+
 import React from "react";
-import Image from "next/image";
+import Head from "next/head";
 import "bootstrap/dist/css/bootstrap.min.css";
+import {
+  Navbar,
+  Nav,
+  Container,
+  Form,
+  Button,
+} from "react-bootstrap";
+import Image from "next/image";
 
-const Page = () => {
-  const skills = [
-    { src: "/icons/html5.svg", alt: "HTML5" },
-    { src: "/icons/css3.svg", alt: "CSS3" },
-    { src: "/icons/javascript.svg", alt: "JavaScript" },
-    { src: "/icons/tailwind.svg", alt: "TailwindCSS" },
-    { src: "/icons/npm.svg", alt: "NPM" },
-    { src: "/icons/figma.svg", alt: "Figma" },
-    { src: "/icons/react.svg", alt: "React" },
-    { src: "/icons/webpack.svg", alt: "Webpack" },
-    { src: "/icons/git.svg", alt: "Git" },
-    { src: "/icons/wordpress.svg", alt: "WordPress" },
-    { src: "/icons/sass.svg", alt: "Sass" },
-  ];
+const skills = [
+  { src: "/programing.png", alt: "node js" },
+  { src: "/css-file.png", alt: "CSS3" },
+  { src: "/java-script.png", alt: "JavaScript" },
+  { src: "/html.png", alt: "html" },
+  { src: "/mysql.png", alt: "mysql" },
+  { src: "/python.png", alt: "python" },
+  { src: "/social.png", alt: "aws" },
+  { src: "/seo.png", alt: "seo" },
+  { src: "/business-intelligence.png", alt: "power bi" },
+  { src: "/physics.png", alt: "react" },
+  { src: "/sass.svg", alt: "Sass" },
+];
 
+export default function Page() {
   return (
     <>
-      <nav className="navbar navbar-expand bg-dark p-3 fixed-top">
-        <div className="container-fluid">
-          <a className="navbar-brand text-warning" href="#home">
+      <Head>
+        <title>My Portfolio - Developer & Designer</title>
+        <meta
+          name="description"
+          content="Portfolio website showcasing skills in web development and design."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      {/* Navbar */}
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top" className="px-3">
+        <Container>
+          <Navbar.Brand href="#home" className="text-warning">
             MY Website
-          </a>
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <a className="nav-link text-warning" href="#home">
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="ms-auto">
+              <Nav.Link href="#home" className="text-warning">
                 Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link text-warning" href="#about">
+              </Nav.Link>
+              <Nav.Link href="#about" className="text-warning">
                 About
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link text-warning" href="#contact">
+              </Nav.Link>
+              <Nav.Link href="#contact" className="text-warning">
                 Contact
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+              </Nav.Link>
+              <Nav.Link href="#skills" className="text-warning">
+                Skills
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+
+      {/* Spacer so content isn't hidden under fixed navbar */}
+      <div style={{ paddingTop: "70px" }} />
 
       {/* Home Section */}
-     <section
-  id="home"
-  className="d-flex align-items-center justify-content-center text-white"
-  style={{
-    backgroundColor: "#000",
-    minHeight: "100vh",
-    width: "100vw",
-  }}
->
-  <div className="text-center">
-    <h1 className="display-4 mb-4 text-warning">Welcome to My Site</h1>
+      <section
+        id="home"
+        className="d-flex align-items-center justify-content-center text-white text-center px-3"
+        style={{
+          backgroundColor: "#000",
+          minHeight: "100vh",
+          width: "100vw",
+        }}
+      >
+        <div>
+          <h1 className="display-4 mb-4 text-warning">Welcome to My Site</h1>
 
-    <img
-      src="/pexels-designecologist-1779487.jpg"
-      alt="Banner"
-      className="img-fluid mb-4"
-      style={{ maxWidth: "1000px", borderRadius: "8px" }}
-    />
+          <Image
+            src="/pexels-designecologist-1779487.jpg"
+            alt="Banner"
+            width={1200}
+            height={675}
+            style={{ borderRadius: "8px", maxWidth: "100%", height: "auto" }}
+            priority
+          />
 
-    <p className="lead">
-      I build modern, responsive websites and love to turn ideas into reality.
-    </p>
-  </div>
-</section>
-
+          <p className="lead mt-3">
+            I build modern, responsive websites and love to turn ideas into reality.
+          </p>
+        </div>
+      </section>
 
       {/* About Section */}
-<section
-  id="about"
-  className="py-5 bg-black text-white"
-  style={{
-    minHeight: "100vh",
-    width: "100vw",
-  }}
->
-  <div className="container text-center">
-    <h2 className="mb-4">About Me</h2>
+      <section
+        id="about"
+        className="py-5 bg-black text-white text-center px-3"
+        style={{
+          minHeight: "100vh",
+          width: "100vw",
+        }}
+      >
+        <div className="container">
+          <h2 className="mb-4">About Me</h2>
 
-    <img
-      src="/image.png" 
-      alt="About"
-      className="img-fluid mb-4"
-      style={{
-        maxWidth: "1000px",
-        borderRadius: "8px",
-      }}
-    />
+          <Image
+            src="/image.png"
+            alt="About"
+            width={1300}
+            height={730}
+            style={{ borderRadius: "8px", maxWidth: "100%", height: "auto" }}
+            priority
+          />
 
-    <p>
-      Hello! I’m a passionate developer with skills in HTML, CSS, JS, React, and more.
-      I enjoy building sleek, responsive websites and always aim for pixel perfection.
-    </p>
-  </div>
-</section>
-
+          <p className="mt-3">
+            Hello! I’m a passionate developer with skills in HTML, CSS, JS, React, and more.
+            I enjoy building sleek, responsive websites and always aim for pixel perfection.
+          </p>
+        </div>
+      </section>
 
       {/* Contact Section */}
       <section
         id="contact"
-        className="py-5 bg-secondary text-white"
-        style={{ minHeight: "100vh" }}
+        className="text-white d-flex align-items-center justify-content-center px-3"
+        style={{
+          backgroundColor: "#000",
+          minHeight: "100vh",
+          width: "100vw",
+          position: "relative",
+          overflow: "hidden",
+          padding: "2rem 0",
+        }}
       >
-        <div className="container">
-          <h2>Contact</h2>
-          <p>Put your contact details or a contact form here.</p>
+        <div style={{ position: "relative", maxWidth: "1200px", width: "100%" }}>
+          <Image
+            src="/pexels-negativespace-97077.jpg"
+            alt="Contact Illustration"
+            width={1200}
+            height={800}
+            style={{
+              width: "100%",
+              height: "auto",
+              borderRadius: "8px",
+              filter: "brightness(0.5)",
+            }}
+          />
+
+          <div
+            className="p-4 rounded"
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              backgroundColor: "rgba(0, 0, 0, 0.75)",
+              maxWidth: "500px",
+              width: "90%",
+              boxShadow: "0 0 15px rgba(0,0,0,0.5)",
+            }}
+          >
+            <h2 className="mb-4 text-center">Get in Touch</h2>
+            {/* Form submits directly to your server API */}
+            <Form method="POST" action="/api/contact">
+              <Form.Group className="mb-3" controlId="formName">
+                <Form.Label>Name</Form.Label>
+                <Form.Control type="text" name="name" placeholder="Enter your name" required />
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formEmail">
+                <Form.Label>Email</Form.Label>
+                <Form.Control type="email" name="email" placeholder="Enter your email" required />
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formSubject">
+                <Form.Label>Subject</Form.Label>
+                <Form.Control type="text" name="subject" placeholder="Subject" />
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formMessage">
+                <Form.Label>Message</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  name="message"
+                  rows={4}
+                  placeholder="Your message"
+                  required
+                />
+              </Form.Group>
+
+              <div className="text-center">
+                <Button variant="primary" type="submit">
+                  Send Message
+                </Button>
+              </div>
+            </Form>
+          </div>
         </div>
       </section>
 
       {/* Skills Section */}
-      <section className="text-center py-5 bg-dark text-white">
+      <section
+        id="skills"
+        className="text-center py-5 bg-dark text-white px-3"
+        style={{
+          backgroundColor: "#000",
+          minHeight: "60vh",
+          width: "100vw",
+        }}
+      >
         <h2
           className="mb-3"
           style={{
             background: "linear-gradient(90deg, #FF00CC, #3333FF)",
             WebkitBackgroundClip: "text",
-            color: "transparent",
+            WebkitTextFillColor: "transparent",
           }}
         >
           SKILLS
         </h2>
+
         <p className="mb-4">The skills, tools and technologies I use:</p>
+
         <div className="container">
           <div className="row justify-content-center">
             {skills.map((skill, index) => (
@@ -143,16 +241,13 @@ const Page = () => {
             ))}
           </div>
         </div>
-      </section>
 
-      {/* Add this CSS for smooth scrolling */}
-      <style jsx global>{`
-        html {
-          scroll-behavior: smooth;
-        }
-      `}</style>
+        <style jsx global>{`
+          html {
+            scroll-behavior: smooth;
+          }
+        `}</style>
+      </section>
     </>
   );
-};
-
-export default Page;
+}
