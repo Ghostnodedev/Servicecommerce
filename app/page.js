@@ -1,20 +1,15 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import React from 'react'
 
-export default function Home() {
+const page = () => {
   return (
-    <div className={styles.page}>
-      <h1 className={styles.title}>Welcome to My Next.js App</h1>
-      <p className={styles.description}>
-        This is a simple example of a Next.js application using CSS modules.
-      </p>
-      <Image
-        src="/images/nextjs-logo.png"
-        alt="Next.js Logo"
-        width={200}
-        height={200}
-        className={styles.logo}
-      />
+    <div>
+      <h1>Welcome to the Home Page</h1>
+      <p>This is the main content of the home page.</p>
+      <p>Feel free to explore the site!</p>
+      <p>Contact us for more information.</p>
+      <p>Thank you for visiting!</p> 
     </div>
-  );
+  )
 }
+
+export default page
